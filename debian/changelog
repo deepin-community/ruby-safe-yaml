@@ -1,0 +1,115 @@
+ruby-safe-yaml (1.0.5-2) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Wed, 20 Jul 2022 16:57:58 +0800
+
+ruby-safe-yaml (1.0.5-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Update standards version to 4.4.1, no changes needed.
+
+  [ Daniel Leidert ]
+  * d/control: Add Rules-Requires-Root field.
+    (Standards-Version): Bump to 4.6.0.
+    (Depends): Remove interpreters and use ${ruby:Depends}.
+  * d/copyright: Add Upstream-Contact field.
+    (Copyright): Add team.
+  * d/ruby-tests.rb: Rename to d/ruby-tests.rake and use rspec.
+  * d/rules: Use gem installation layout. Exclude bin/* from installation.
+  * d/patches/fix_bin_safe_yaml.patch: Remove patch.
+    - In gem installation layout that patch is not necessary.
+  * d/patches/fix_ruby_3_compatibility.patch: Add patch.
+    - Make the gem run with Ruby 3.0 (closes: #996380).
+  * d/patches/series: Adjust.
+  * d/upstream/metadata: Add Changelog field.
+
+  [ Sergio Durigan Junior ]
+  * d/p/adjust-tests-to-reflect-OpenStruct-changes-on-Ruby3.patch:
+    Adjust tests to reflect OpenStruct changes on Ruby3.0.
+
+ -- Sergio Durigan Junior <sergiodj@debian.org>  Fri, 28 Jan 2022 16:44:54 -0500
+
+ruby-safe-yaml (1.0.5-1) unstable; urgency=medium
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Cédric Boutillier ]
+  * New upstream version 1.0.5
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Drop datetime.patch, not needed anymore
+  * Bump Standards-Version to 4.4.0 (no changes needed)
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 04 Sep 2019 22:46:52 +0200
+
+ruby-safe-yaml (1.0.4-2) unstable; urgency=medium
+
+  * Use https:// in Vcs-* fields
+  * Run wrap-and-sort on packaging files
+  * Bump Standards-Version to 4.1.3 (no changes needed)
+  * Bump debhelper compatibility to 11
+  * Use https in watch file
+  * Point VCS-* fiels to salsa
+  * Add datetime.patch to ensure DateTime class is defined (Closes: #888123)
+  * Disable failing gmt_offset comparison test with local time zone
+
+ -- Cédric Boutillier <boutil@debian.org>  Tue, 13 Mar 2018 11:48:25 +0100
+
+ruby-safe-yaml (1.0.4-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+    - test suite ported to RSpec 3
+  * Update packaging with a new dh-make-ruby run
+
+ -- Antonio Terceiro <terceiro@debian.org>  Thu, 25 Jun 2015 09:13:26 -0300
+
+ruby-safe-yaml (1.0.3-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.0.3
+  * Install bin/safe_yaml as an example
+    + fix load_path with fix_bin_safe_yaml.patch
+  * Refresh use_ruby-indentation.patch
+
+ -- Cédric Boutillier <boutil@debian.org>  Fri, 16 May 2014 00:20:06 +0200
+
+ruby-safe-yaml (1.0.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.0.1
+  * debian/control:
+    + update Homepage field
+    + bump Standards-Version to 3.9.5 (no changes needed)
+  * Refresh use_ruby-indentation.patch
+
+ -- Cédric Boutillier <boutil@debian.org>  Fri, 10 Jan 2014 07:53:20 +0100
+
+ruby-safe-yaml (0.9.7-1) unstable; urgency=low
+
+  * Imported Upstream version 0.9.7
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 25 Sep 2013 07:11:15 +0200
+
+ruby-safe-yaml (0.9.5-1) unstable; urgency=low
+
+  * Imported Upstream version 0.9.5
+  * Take into account Ruby2.0 and its yamler in ruby-tests.rb
+    (Closes: #720243).
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 11 Sep 2013 23:18:57 +0200
+
+ruby-safe-yaml (0.9.3-1) unstable; urgency=low
+
+  * New upstream version
+  * Install upstream changelog
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 26 Jun 2013 10:16:37 +0200
+
+ruby-safe-yaml (0.9.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #703861)
+
+ -- Cédric Boutillier <boutil@debian.org>  Thu, 28 Mar 2013 01:10:10 +0100

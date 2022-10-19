@@ -1,0 +1,25 @@
+From: Cédric Boutillier <boutil@debian.org>
+Date: Tue, 13 Mar 2018 11:47:34 +0100
+Subject: Disable failing gmt_offset comparison test with local time zone
+
+Cannot always work as it depend on the local time zone.
+One could also set TZ environment variable in debian/rules.
+
+Forwarded: not-needed
+---
+ spec/transform/to_date_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/spec/transform/to_date_spec.rb b/spec/transform/to_date_spec.rb
+index 31bdb41..537b025 100644
+--- a/spec/transform/to_date_spec.rb
++++ b/spec/transform/to_date_spec.rb
+@@ -36,7 +36,7 @@ describe SafeYAML::Transform::ToDate do
+     success, result = subject.transform?("2012-12-01 10:33:45 +11:00")
+     expect(success).to be_truthy
+     expect(result).to eq(Time.utc(2012, 11, 30, 23, 33, 45))
+-    expect(result.gmt_offset).to eq(Time.local(2012, 11, 30).gmt_offset)
++    #expect(result.gmt_offset).to eq(Time.local(2012, 11, 30).gmt_offset)
+   end
+ 
+   it "returns strings for invalid dates" do

@@ -1,0 +1,31 @@
+Source: ruby-safe-yaml
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Cédric Boutillier <boutil@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               rake,
+               ruby-hashie,
+               ruby-indentation,
+               ruby-rspec
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-safe-yaml.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-safe-yaml
+Homepage: https://github.com/dtao/safe_yaml
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-safe-yaml
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Description: safer YAML loader for Ruby
+ SafeYAML provides an alternative implementation of YAML.load suitable for
+ accepting user input in Ruby applications.
+ .
+ Unlike Ruby's built-in implementation of YAML.load, SafeYAML's version does
+ not expose applications to arbitrary code execution exploits.

@@ -1,0 +1,29 @@
+From: Cédric Boutillier <boutil@debian.org>
+Date: Wed, 27 Mar 2013 23:36:12 +0100
+Subject: Use 'indentation' gem instead of unpackaged 'heredoc_unindent'
+
+Use 'indentation' gem instead of unpackaged 'heredoc_unindent' and provide an
+alias for the unindent method, called reset_indentation in indentation gem.
+
+Forwarded: not-needed
+---
+ spec/spec_helper.rb | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/spec/spec_helper.rb b/spec/spec_helper.rb
+index 967b2d3..6ddebe3 100644
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -29,7 +29,11 @@ ORIGINAL_YAML_LOAD_FILE = YAML.method(:load_file)
+ require "safe_yaml/load"
+ require "ostruct"
+ require "hashie"
+-require "heredoc_unindent"
++require "indentation"
++
++class String
++  alias unindent reset_indentation
++end
+ 
+ # Stolen from Rails:
+ # https://github.com/rails/rails/blob/3-2-stable/activesupport/lib/active_support/core_ext/kernel/reporting.rb#L10-25
